@@ -1,0 +1,14 @@
+import sys
+from itertools import combinations
+input = sys.stdin.readline
+
+N, M = map(int, input().split())
+cards = list(map(int, input().split()))
+
+ans = 0
+for a, b, c in combinations(cards, 3):
+    s = a + b + c
+    if s <= M and s > ans:
+        ans = s
+
+print(ans)
